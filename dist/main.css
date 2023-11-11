@@ -1,0 +1,22 @@
+/*!*********************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/productCard/style.scss ***!
+  \*********************************************************************************************************************/
+.js-product [href="#order"].disabled {
+  pointer-events: none !important;
+  opacity: 0.6 !important;
+}
+.js-product .prod-text-input {
+  position: relative;
+  --invalid-msg: "";
+}
+.js-product .prod-text-input__label {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  color: red;
+}
+.js-product .prod-text-input.invalid .prod-text-input__label {
+  display: block;
+}

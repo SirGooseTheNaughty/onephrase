@@ -1,0 +1,26 @@
+.js-product {
+    [href="#order"] {
+        &.disabled {
+            pointer-events: none !important;
+            opacity: 0.6 !important;
+        }
+    }
+
+    .prod-text-input {
+        position: relative;
+        --invalid-msg: '';
+
+        &__label {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            color: red;
+        }
+
+        &.invalid .prod-text-input__label {
+            display: block;
+        }
+    }
+}
