@@ -1,0 +1,33 @@
+.custom-cart-product {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    grid-template-rows: auto auto;
+    height: auto;
+
+    .t706__product-title {
+        max-width: 165px;
+    }
+
+    .t706__product-plusminus {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .text-controls {
+        grid-column: 2/6;
+
+        &__row {
+            display: flex;
+            align-items: center;
+
+            &-title {
+                width: 165px;
+            }
+
+            &-plus-minus {
+                opacity: 1;
+                pointer-events: auto;
+            }
+        }
+    }
+}

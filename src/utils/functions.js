@@ -28,3 +28,5 @@ export function isCustom(product) {
     const partUid = product?.dataset.productPartUid;
     return partUid === CUSTOM_CATEGORY_ID;
 }
+
+export const saveLocalStorage = () => localStorage.setItem('tcart', JSON.stringify(window.tcart));

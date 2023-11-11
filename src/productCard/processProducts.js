@@ -1,3 +1,5 @@
+import { saveLocalStorage } from "../utils/functions";
+
 const getOptions = (product) => {
     const options = product.querySelectorAll('.t-product__option-variants');
     return [...options].reduce((acc, option) => {
@@ -28,12 +30,10 @@ const updateProducts = (textValue, uid, selectedOptions, amount) => {
         console.log(JSON.parse(JSON.stringify(product)));
         const isThatProduct = compareProducts(product, uid, selectedOptions);
         if (!isThatProduct) {
-            console.log(1);
             return product;
         }
 
         if (!product.textOptions) {
-            console.log(2);
             return {
                 ...product,
                 textOptions: [
@@ -43,7 +43,6 @@ const updateProducts = (textValue, uid, selectedOptions, amount) => {
         }
         const sameOption = product.textOptions.find(({ text }) => text === textValue);
         if (!sameOption) {
-            console.log(3);
             return {
                 ...product,
                 textOptions: [
@@ -58,15 +57,12 @@ const updateProducts = (textValue, uid, selectedOptions, amount) => {
             }
             return option;
         });
-        console.log(4);
         return {
             ...product,
             textOptions: updatedOptions,
         }
     });
 };
-
-const saveLocalStorage = () => localStorage.setItem('tcart', JSON.stringify(window.tcart));
 
 const getProductAmount = (productElement) => {
     const stringAmount = productElement.querySelector('.t-store__prod__quantity-input')?.value;
