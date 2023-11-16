@@ -1,4 +1,5 @@
 import { MAX_LENGTH, MIN_LENGTH, TOO_LONG_MSG, TOO_SHORT_MSG } from "../utils/constants";
+import { createElement } from '../utils/functions';
 
 export const addInput = (productElement, onValid = () => {}) => {
     const existingInput = productElement.querySelector('.prod-text-input');
@@ -28,16 +29,13 @@ export const addInput = (productElement, onValid = () => {}) => {
     }
 
     function createInput() {
-        const wrapper = document.createElement('div');
-        wrapper.classList.add('prod-text-input');
-        const input = document.createElement('input');
+        const wrapper = createElement('div', 'prod-text-input t-product__option');
+        const input = createElement('input', 'prod-text-input__input t-descr');
         input.setAttribute('type', 'text');
-        input.classList.add('prod-text-input__input');
-        const title = document.createElement('div');
-        title.classList.add('t-product__option-title', 'prod-text-input__title');
-        title.textContent = 'надпись для нанесения (до 29 симв)';
-        const label = document.createElement('div');
-        label.classList.add('prod-text-input__label');
+        input.setAttribute('placeholder', 'введите текст');
+        const title = createElement('div', 't-product__option-title t-typography__options t-descr t-descr_xxs prod-text-input__title');
+        title.textContent = 'Надпись для нанесения (до 29 симв)';
+        const label = createElement('div', 'prod-text-input__label t-descr');
 
         wrapper.appendChild(title);
         wrapper.appendChild(input);

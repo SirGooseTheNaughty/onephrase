@@ -8,7 +8,11 @@
 
     .prod-text-input {
         position: relative;
-        --invalid-msg: '';
+
+        &__input {
+            padding: 7px;
+            width: 30%;
+        }
 
         &__label {
             display: none;
@@ -19,8 +23,12 @@
             color: red;
         }
 
-        &.invalid .prod-text-input__label {
-            display: block;
+        &.invalid {
+            margin-bottom: 30px !important;
+
+            .prod-text-input__label {
+                display: block;
+            }
         }
     }
 }

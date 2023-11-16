@@ -27,7 +27,6 @@ const compareProducts = (product, uid, selectedOptions) => {
 
 const updateProducts = (textValue, uid, selectedOptions, amount) => {
     window.tcart.products = window.tcart.products.map((product) => {
-        console.log(JSON.parse(JSON.stringify(product)));
         const isThatProduct = compareProducts(product, uid, selectedOptions);
         if (!isThatProduct) {
             return product;

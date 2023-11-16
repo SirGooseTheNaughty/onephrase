@@ -30,3 +30,16 @@ export function isCustom(product) {
 }
 
 export const saveLocalStorage = () => localStorage.setItem('tcart', JSON.stringify(window.tcart));
+
+export const createElement = (tag = 'div', classNames = '', attributes = null) => {
+    const element = document.createElement(tag);
+    if (classNames?.length) {
+        element.className = classNames;
+    }
+    if (attributes && Object.keys(attributes).length) {
+        for (const [key, value] of Object.entries(attributes)) {
+            element.setAttribute(key, value);
+        }
+    }
+    return element;
+};

@@ -5,10 +5,13 @@ import './style.scss';
 
 export function useCart() {
     const cartObserver = new MutationObserver(onOpenProductPopup);
+    const productListObserver = new MutationObserver(onProductListChange);
 
     waitForElement('.t706__cartwin').then((cartElem) => {
         window.cart = cartElem;
-        cartObserver.observe(cartElem, { attributes: true });
+        const productsList = cartElem.querySelector('.t706__cartwin-products');
+        // cartObserver.observe(cartElem, { attributes: true });
+        productListObserver.observe(productsList, { childList: true });
     });
 
     function onOpenProductPopup(mutations) {
@@ -17,5 +20,9 @@ export function useCart() {
                 return setTimeout(drawCustomProducts, 250);
             }
         }
+    }
+
+    function onProductListChange() {
+        setTimeout(drawCustomProducts, 50);
     }
 };

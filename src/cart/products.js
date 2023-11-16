@@ -6,6 +6,7 @@ const redrawCart = () => {
     drawCustomProducts();
     tcart__updateTotalProductsinCartObj();
     tcart__reDrawTotal();
+    tcart__reDrawCartIcon();
     saveLocalStorage();
 };
 
@@ -41,7 +42,6 @@ export const minusText = (textValue, index, rowElement) => {
 
 export const removeText = (textValue, index, rowElement) => {
     const product = getProduct(index);
-    console.log(product)
     const amountToDelete = product.textOptions.find(({ text }) => text === textValue).amount;
     const newTextOptions = product.textOptions.filter(({ text }) => text !== textValue);
     if (newTextOptions.length === 0) {

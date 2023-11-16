@@ -4,8 +4,17 @@
     grid-template-rows: auto auto;
     height: auto;
 
+    > div {
+        padding-bottom: 0;
+    }
+
+    .t706__product-thumb {
+        display: grid;
+        place-items: center;
+    }
+
     .t706__product-title {
-        max-width: 165px;
+        width: 165px;
     }
 
     .t706__product-plusminus {
